@@ -9,6 +9,11 @@ public class Amain {
 
         System.out.println(b.field1);
         b.method();
+
+
+        A.C c = new A.C();
+        c.method1();
+        System.out.println(c.field2);;
     }
 
 }

@@ -15,4 +15,23 @@ public class A {
 
     }
 
+    static class C {
+
+        public C() {
+        }
+
+        int field2;
+
+        static int field3;
+
+        void method1() {
+
+        }
+
+        static void method2() {
+
+        }
+
+    }
+
 }
