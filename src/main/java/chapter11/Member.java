@@ -1,19 +1,19 @@
 package chapter11;
 
+import java.util.Arrays;
+
 public class Member implements Cloneable {
 
-    public String id;
     public String name;
-    public String password;
-    public int age;
-    public boolean adult;
+    public String age;
+    public int[] scores;
+    public Car car;
 
-    public Member(String id, String name, String password, int age, boolean adult) {
-        this.id = id;
+    public Member(String name, String age, int[] scores, Car car) {
         this.name = name;
-        this.password = password;
         this.age = age;
-        this.adult = adult;
+        this.scores = scores;
+        this.car = car;
     }
 
     public Member getMember() {
@@ -27,13 +27,22 @@ public class Member implements Cloneable {
     }
 
     @Override
+    protected Object clone() throws CloneNotSupportedException {
+        Member cloned = (Member) super.clone();
+
+        cloned.scores = Arrays.copyOf(this.scores, this.scores.length);
+        cloned.car = new Car(this.car.model);
+
+        return cloned;
+    }
+
+    @Override
     public String toString() {
         return "Member{" +
-            "id='" + id + '\'' +
-            ", name='" + name + '\'' +
-            ", password='" + password + '\'' +
-            ", age=" + age +
-            ", adult=" + adult +
+            "name='" + name + '\'' +
+            ", age='" + age + '\'' +
+            ", scores=" + Arrays.toString(scores) +
+            ", car=" + car +
             '}';
     }
 
