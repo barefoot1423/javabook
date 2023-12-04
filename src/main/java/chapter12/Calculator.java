@@ -1,13 +1,14 @@
 package chapter12;
 
 public class Calculator {
+
     private int memory;
 
     public int getMemory() {
         return memory;
     }
 
-    public void setMemory(int memory) {
+    public synchronized void setMemory(int memory) {
         this.memory = memory;
 
         try {
@@ -18,4 +19,5 @@ public class Calculator {
         }
         System.out.println(Thread.currentThread().getName() + ": " + this.memory);
     }
+
 }
