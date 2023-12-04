@@ -5,20 +5,20 @@ public class MyFunctionalInterfaceExample {
     public static void main(String[] args) {
         MyFunctionalInterface fi;
 
-        fi = () -> {
-            String str = "method call";
-            System.out.println(str);
+        fi = (x) -> {
+            int result = x * 5;
+            System.out.println(result);
         };
 
-        fi.method();
+        fi.method(2);
 
-        fi = () -> System.out.println("method call2");
+        fi = (x) -> System.out.println(x * 5);
 
-        fi.method();
+        fi.method(2);
 
-        fi = () -> System.out.println("method call3");
+        fi = (x) -> System.out.println(x * 5);
 
-        fi.method();
+        fi.method(2);
 
     }
 
