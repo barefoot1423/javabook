@@ -30,7 +30,7 @@ public class PredicateExample {
         double mailAvg = avg(t -> t.getSex().equals("Man"));
         System.out.println("average score of men : " + mailAvg );
 
-        double femailAvg = avg(t ->π t.getSex().equals("Woman"));
+        double femailAvg = avg(t -> t.getSex().equals("Woman"));
         System.out.println("average score of women : " + femailAvg );
     }
 
