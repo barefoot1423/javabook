@@ -24,6 +24,9 @@ public class GroupingByExample {
 
         System.out.println(collect.get(Student.City.Pusan));
         System.out.println(collect.get(Student.City.Seoul));
+
+        Map<Student.Sex, Double> collect1 = totalList.stream().collect(Collectors.groupingBy(Student::getSex, Collectors.averagingDouble(Student::getScore)));
+        System.out.println(collect1.toString());
     }
 
 }
